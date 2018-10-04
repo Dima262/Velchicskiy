@@ -15,14 +15,14 @@ col4 <- seq(from = min(iris[, 4]), to = max(iris[, 4]), by = 0.1)
 for(i in col3) {
   for(j in col4) {
     point <- c(i, j)
-    distances <- matrix(NA, l, 2)
+    distances <- matrix(NA, l, 2) # расстояния от классифицируемого объекта u до каждого i-го соседа
     for(p in 1:l) {
       distances[p, ] <- c(p, eDist(xl[p, 1:n], point))
     }
-    orderedxl <- xl[order(distances[ , 2]), ]
-    classes <- orderedxl[1:k, n + 1]
-    counts <- table(classes)
-    classname <- which.max(counts)
+    orderedxl <- xl[order(distances[ , 2]), ] # сортировка расстояний
+    classes <- orderedxl[1:k, n + 1] # названия первых k классов (k ближайших соседей) в classes 
+    counts <- table(classes) # количество каждого класса в классах
+    classname <- which.max(counts) #имя класса содержащего max количество
     points(point[1], point[2],  pch = 21, bg = "white", col = colors[classname])
   }
 }
