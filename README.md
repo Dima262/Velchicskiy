@@ -55,4 +55,8 @@ classes <- orderedxl[1:k, n + 1] # названия первых k классо�
 
 ![alt text](https://github.com/Dima262/Velchicskiy/blob/master/Rplot.png)
 
+График зависимости *LOO* от *k*.
+
+![alt text](https://github.com/Dima262/Velchicskiy/blob/master/Loo.png)
+
 
